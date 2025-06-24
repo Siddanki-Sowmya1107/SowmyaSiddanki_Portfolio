@@ -11,7 +11,7 @@ export default function Navbar() {
         <li><a href="#projects" className="hover:text-rustOrange">Projects</a></li>
         <li><a href="#experience" className="hover:text-rustOrange">Work</a></li>
         <li><a href="#skills" className="hover:text-rustOrange">Skills</a></li>
-        <li><a href="#certifications" className="hover:text-rustOrange">Certifications</a></li>
+        
         <li><a href="#contact" className="hover:text-rustOrange">Contact</a></li>
         <li>
         <a
