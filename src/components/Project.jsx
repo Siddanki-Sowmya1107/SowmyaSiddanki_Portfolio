@@ -1,98 +1,120 @@
+// src/components/Projects.jsx
 import React from "react";
 
 export default function Projects() {
   const projects = [
     {
-      title: "Recommendation System Driven by Sentiment Analysis",
-      place: "Institute of Aeronautical Engineering",
-      description:
-        "Developed an advanced recommendation engine for e-commerce using ML and sentiment analysis. Used collaborative and content-based filtering with Google Colab and Python.",
-      tech: ["Python", "ML", "Google Colab", "Sentiment Analysis"],
+      title: "Customer Segmentation using ML models for E-commerce websites",
+      date: "09/2024 – 12/2024",
+      bullets: [
+        "Designed an end-to-end cloud-based customer segmentation pipeline using Microsoft Azure, with data ingestion and orchestration handled through Azure Data Factory and storage in Azure SQL Database.",
+        "Built and trained K-Means clustering models using Azure Machine Learning, optimizing the number of clusters with Silhouette Score and Elbow Method to improve segment clarity and interpretability.",
+        "Visualized customer segments and business insights using Azure analytics workflows, enabling scalable and automated model execution without relying on local environments.",
+      ],
+      tech: [
+        "Azure Data Factory",
+        "Azure SQL Database",
+        "Azure Machine Learning",
+        "Python",
+        "K-Means",
+      ],
+      link: "https://github.com/Siddanki-Sowmya1107/azure-customer-segmentation", // add GitHub/demo later if you want
     },
     {
-      title: "Customer Segmentation Using Unsupervised Learning",
-      place: "Independent Project – Summer Break, 3rd Year B.Tech",
-      description:
-        "Built a pipeline to cluster customers based on purchasing patterns using K-Means, Agglomerative Clustering, and PCA. Evaluated clusters using Elbow, Silhouette, and Davies-Bouldin Index.",
-      tech: ["Python", "K-Means", "PCA", "Clustering"],
+      title: "Sentiment-Driven Recommendation System for E-Commerce",
+      date: "02/2024 – 06/2024",
+      bullets: [
+        "Built a scalable recommendation engine using collaborative filtering and NLP on 50K+ customer reviews, improving recommendation relevance by ~30% using TF-IDF and cosine similarity.",
+        "Addressed cold-start and sparse data challenges through similarity-based modeling and evaluation metrics, improving personalization and product coverage.",
+        "Deployed a real-time multi-user Streamlit application; optimized data pipelines to reduce latency by ~25% and increase product discoverability by ~20%.",
+        
+      ],
+      tech: [
+        "Python",
+        "NLP",
+        "TF-IDF",
+        "Cosine Similarity",
+        "Collaborative Filtering",
+        "Streamlit",
+      ],
+      link: "https://github.com/Siddanki-Sowmya1107/Sentiment_Driven_RecommendationSystem", // add GitHub/demo later
     },
     {
-      title: "Sentiment Analysis on Amazon Alexa Reviews",
-      place: "Institute of Aeronautical Engineering",
-      description:
-        "Analyzed Alexa reviews using NLP techniques for text preprocessing and model building. Achieved high accuracy in predicting customer sentiment.",
-      tech: ["Python", "NLP", "Text Classification"],
-    },
-    {
-      title: "Tableau Sales Dashboard",
-      place: "GitHub Repo",
-      description:
-        "Designed an interactive dashboard displaying key sales metrics like revenue, profit, and trends. Used filtering and storytelling features in Tableau.",
-      tech: ["Tableau", "Data Visualization"],
-      link: "https://github.com/Siddanki-Sowmya1107/Tableau-SalesDashboard",
+      title: "Deep Learning–Based Retrieval Augmented Generation (RAG) System",
+      date: "01/2025 – 04/2025",
+      bullets: [
+        "Built a deep learning–based RAG system using Python, transformer-based embedding models, and a GPT-based large language model to answer questions from large unstructured document collections.",
+        "Implemented document chunking, embedding generation, and vector similarity search using PostgreSQL with vector extensions to retrieve the most relevant text passages for each query.",
+        "Integrated retrieved context with the GPT-based model to generate accurate, context-aware responses, reduced hallucinations, and evaluated performance using relevance, coherence, and consistency metrics.",
+      ],
+      tech: [
+        "Python",
+        "Transformers",
+        "PostgreSQL (vector)",
+        "Vector Search",
+        "RAG",
+        "GPT-based LLM",
+      ],
+      link: "https://github.com/Siddanki-Sowmya1107/rag-hybrid-pgvector", // add GitHub/demo later
     },
   ];
 
   return (
     <section
-      className="py-16 px-6 rounded-lg shadow-lg max-w-6xl mx-auto"
-      style={{ backgroundColor: "#FAF3E0" }} // creamWhite
       id="projects"
+      className="bg-creamWhite text-charcoalGray py-16 px-6 font-modern"
     >
-      <h2
-        className="text-4xl font-bold mb-12 text-center"
-        style={{ color: "#2C7A7B" }} // richTeal
-      >
-        Projects
-      </h2>
-      <div className="grid md:grid-cols-2 gap-8">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-xl shadow-md p-6 transition-transform hover:scale-[1.02]"
-          >
-            <h3
-              className="text-xl font-semibold mb-1"
-              style={{ color: "#2C7A7B" }} // richTeal
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold mb-12 text-center text-darkOlive">
+          Projects
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-md p-6 border-l-4 border-rustOrange hover:shadow-lg transition-shadow"
             >
-              {project.title}
-            </h3>
-            <p
-              className="text-sm mb-3 italic"
-              style={{ color: "#E07A5F" }} // warmCoral for accent
-            >
-              {project.place}
-            </p>
-            <p className="mb-4" style={{ color: "#4A5568" }}>
-              {project.description}
-            </p>
-            <div className="flex flex-wrap gap-2 mb-3">
-              {project.tech.map((tech, i) => (
-                <span
-                  key={i}
-                  className="px-3 py-1 text-xs rounded-full"
-                  style={{
-                    backgroundColor: "#D4AF7F", // mutedGold
-                    color: "#FAF3E0", // softIvory text
-                  }}
+              <h3 className="text-xl font-semibold text-darkOlive mb-1">
+                {project.title}
+              </h3>
+
+              <p className="text-sm italic text-rustOrange mb-4">
+                {project.date}
+              </p>
+
+              <ul className="list-disc list-inside space-y-2 text-charcoalGray mb-5">
+                {project.bullets.map((point, i) => (
+                  <li key={i} className="leading-relaxed">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="flex flex-wrap gap-2 mb-3">
+                {project.tech.map((tech, i) => (
+                  <span
+                    key={i}
+                    className="bg-rustOrange/10 text-charcoalGray px-3 py-1 text-xs rounded-full"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {project.link && (
+                <a
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm underline text-rustOrange hover:text-darkOlive"
                 >
-                  {tech}
-                </span>
-              ))}
+                  View Project ↗
+                </a>
+              )}
             </div>
-            {project.link && (
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm underline hover:text-[#2C7A7B]"
-                style={{ color: "#E07A5F" }} // warmCoral link color
-              >
-                View Project ↗
-              </a>
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   );

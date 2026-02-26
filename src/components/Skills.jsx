@@ -2,32 +2,63 @@ import React from "react";
 
 export default function Skills() {
   const skillCategories = {
-    "Technical Skills": [
-      "Python Programming",
-      "SQL",
-      "HTML",
-      "CSS",
-      "ReactJS",
-      "Java (Basics)",
-      "Machine Learning",
-      "Data Visualization",
-    ],
-    "Tools & Platforms": [
-      "Power BI",
-      "Tableau",
-      "Google Colab",
-      "GitHub",
-    ],
-    "Soft Skills": [
-      "Problem Solving",
-      "Analytical Thinking",
-      "Communication",
-      "Collaboration",
-      "Adaptability",
-      "Time Management",
-    ],
-  };
+  "Programming & Query Languages": [
+    "Python",
+    "SQL",
+    "JavaScript",
+    "Java",
+    "Shell Script",
+  ],
 
+  "Web & Application Development": [
+    "React.js",
+    "HTML",
+    "CSS",
+    "Streamlit",
+  ],
+
+  "Data Science & Machine Learning": [
+    "Pandas",
+    "NumPy",
+    "Scikit-learn",
+    "TensorFlow",
+    "Keras",
+    "Transformer Models",
+    "RAG Systems",
+  ],
+
+  "Data Visualization & BI": [
+    "Power BI",
+    "Tableau",
+  ],
+
+  "Databases": [
+    "PostgreSQL",
+    "MySQL",
+    "Microsoft SQL Server",
+    "MongoDB",
+    "Oracle",
+  ],
+
+  "Cloud & MLOps": [
+    "Microsoft Azure",
+    "Azure Data Factory",
+    "Azure Machine Learning",
+    "Azure Databricks",
+    "Azure SQL",
+    "Git",
+    "GitHub",
+    "Azure DevOps",
+  ],
+
+  "Professional Skills": [
+    "Analytical Thinking",
+    "Problem Solving",
+    "Communication",
+    "Collaboration",
+    "Adaptability",
+  ],
+};
   return (
     <section
       id="skills"
